@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOIR BAR</title>
+
+<style>
+
+:root{
+--bg:#090909;
+--black:#111;
+--gold:#c59b5f;
+--soft:#d5c7b2;
+--muted:#8f8577;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Georgia,"Yu Mincho",serif;
+background:var(--bg);
+color:#f5efe6;
+line-height:1.8;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+display:flex;
+justify-content:space-between;
+padding:28px 8vw;
+background:rgba(9,9,9,.75);
+backdrop-filter:blur(10px);
+z-index:100;
+}
+
+nav a{
+margin-left:20px;
+font-size:12px;
+letter-spacing:.14em;
+text-transform:uppercase;
+}
+
+header{
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:8vw;
+background:
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.65)),
+url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1800&auto=format&fit=crop")
+center/cover;
+}
+
+.hero{
+max-width:760px;
+}
+
+.small{
+font-size:12px;
+letter-spacing:.35em;
+color:var(--gold);
+margin-bottom:25px;
+}
+
+h1{
+font-weight:400;
+font-size:clamp(60px,10vw,120px);
+line-height:1;
+margin-bottom:30px;
+}
+
+.hero p{
+max-width:540px;
+color:#d2c8bb;
+}
+
+.btn{
+display:inline-block;
+margin-top:35px;
+padding:14px 34px;
+border:1px solid var(--gold);
+color:var(--gold);
+}
+
+.btn:hover{
+background:var(--gold);
+color:#111;
+}
+
+section{
+padding:110px 8vw;
+}
+
+.label{
+font-size:12px;
+letter-spacing:.35em;
+color:var(--gold);
+margin-bottom:20px;
+}
+
+h2{
+font-size:clamp(42px,6vw,74px);
+font-weight:400;
+margin-bottom:40px;
+}
+
+.concept{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+}
+
+.concept img{
+width:100%;
+height:650px;
+object-fit:cover;
+}
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:50px;
+}
+
+.card{
+border:1px solid rgba(197,155,95,.2);
+padding:40px 30px;
+background:#111;
+}
+
+.card h3{
+font-size:30px;
+font-weight:400;
+margin-bottom:14px;
+color:var(--gold);
+}
+
+.card p{
+color:#c9bfae;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:520px;
+object-fit:cover;
+}
+
+.info{
+margin-top:30px;
+border-top:1px solid rgba(255,255,255,.1);
+}
+
+.row{
+display:grid;
+grid-template-columns:130px 1fr;
+padding:22px 0;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.cta{
+text-align:center;
+padding:130px 30px;
+background:#111;
+}
+
+footer{
+padding:30px;
+text-align:center;
+font-size:12px;
+color:#777;
+}
+
+@media(max-width:800px){
+
+nav a{
+margin-left:12px;
+font-size:11px;
+letter-spacing:0;
+}
+
+.concept,
+.gallery,
+.menu-grid{
+grid-template-columns:1fr;
+}
+
+.concept img{
+height:420px;
+}
+
+.gallery img{
+height:320px;
+}
+
+section{
+padding:70px 24px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+<div>NOIR BAR</div>
+
+<div>
+<a href="#">TOP</a>
+<a href="menu.html">MENU</a>
+<a href="#access">ACCESS</a>
+</div>
+
+</nav>
+
+<header>
+
+<div class="hero">
+
+<div class="small">
+SPEAKEASY COCKTAIL BAR
+</div>
+
+<h1>
+Night has<br>
+its own ritual.
+</h1>
+
+<p>
+静かな照明とクラフトカクテル。
+深夜に余韻を味わうためのバー。
+</p>
+
+<a href="#" class="btn">
+Reserve
+</a>
+
+</div>
+
+</header>
+
+
+<section class="concept">
+
+<div>
+
+<div class="label">
+CONCEPT
+</div>
+
+<h2>
+隠れ家で
+夜を味わう。
+</h2>
+
+<p>
+クラシックカクテルと
+シグネチャードリンクを
+シネマティックな空間で。
+</p>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1400&auto=format&fit=crop">
+
+</section>
+
+
+<section>
+
+<div class="label">
+SIGNATURE
+</div>
+
+<h2>
+Signature Cocktails
+</h2>
+
+<div class="menu-grid">
+
+<div class="card">
+<h3>Old Fashioned</h3>
+<p>熟成感あるクラシック。</p>
+</div>
+
+<div class="card">
+<h3>Negroni</h3>
+<p>ビターで美しい余韻。</p>
+</div>
+
+<div class="card">
+<h3>House Martini</h3>
+<p>シグネチャーツイスト。</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="label">
+GALLERY
+</div>
+
+<h2>
+Atmosphere
+</h2>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1400&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?q=80&w=1400&auto=format&fit=crop">
+</div>
+
+</section>
+
+
+<section id="access">
+
+<div class="label">
+ACCESS
+</div>
+
+<h2>
+Information
+</h2>
+
+<div class="info">
+
+<div class="row">
+<div>ADDRESS</div>
+<div>東京都豊島区○○</div>
+</div>
+
+<div class="row">
+<div>OPEN</div>
+<div>18:00 - 03:00</div>
+</div>
+
+<div class="row">
+<div>CLOSED</div>
+<div>Sunday</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="cta">
+
+<div class="label">
+RESERVATION
+</div>
+
+<h2>
+席を予約する
+</h2>
+
+<a href="#" class="btn">
+LINE予約
+</a>
+
+</section>
+
+<footer>
+© NOIR BAR
+</footer>
+
+</body>
+</html>
