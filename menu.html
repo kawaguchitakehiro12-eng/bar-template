@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MENU | NOIR BAR</title>
+
+<style>
+:root{
+--bg:#090909;
+--black:#111;
+--gold:#c59b5f;
+--soft:#d5c7b2;
+--muted:#8f8577;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:Georgia,"Yu Mincho",serif;
+background:var(--bg);
+color:#f5efe6;
+line-height:1.8;
+}
+
+a{text-decoration:none;color:inherit;}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+display:flex;
+justify-content:space-between;
+padding:28px 8vw;
+background:rgba(9,9,9,.78);
+backdrop-filter:blur(10px);
+z-index:100;
+}
+
+nav a{
+margin-left:20px;
+font-size:12px;
+letter-spacing:.14em;
+text-transform:uppercase;
+}
+
+header{
+min-height:72vh;
+display:flex;
+align-items:center;
+padding:8vw;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),
+url("https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1800&auto=format&fit=crop")
+center/cover;
+}
+
+.small{
+font-size:12px;
+letter-spacing:.35em;
+color:var(--gold);
+margin-bottom:24px;
+}
+
+h1{
+font-weight:400;
+font-size:clamp(58px,10vw,115px);
+line-height:1;
+margin-bottom:24px;
+}
+
+header p{
+max-width:540px;
+color:#d2c8bb;
+}
+
+section{
+padding:100px 8vw;
+}
+
+.label{
+font-size:12px;
+letter-spacing:.35em;
+color:var(--gold);
+margin-bottom:22px;
+}
+
+h2{
+font-size:clamp(40px,6vw,74px);
+font-weight:400;
+margin-bottom:44px;
+}
+
+.menu-group{
+margin-bottom:90px;
+}
+
+.menu-item{
+display:grid;
+grid-template-columns:1fr auto;
+gap:32px;
+padding:24px 0;
+border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.menu-item h3{
+font-size:27px;
+font-weight:400;
+margin-bottom:8px;
+color:var(--soft);
+}
+
+.menu-item p{
+color:var(--muted);
+font-size:14px;
+max-width:620px;
+}
+
+.price{
+color:var(--gold);
+letter-spacing:.08em;
+white-space:nowrap;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:500px;
+object-fit:cover;
+filter:brightness(.85);
+}
+
+.cta{
+text-align:center;
+padding:130px 30px;
+background:#111;
+}
+
+.btn{
+display:inline-block;
+margin-top:34px;
+padding:14px 34px;
+border:1px solid var(--gold);
+color:var(--gold);
+}
+
+.btn:hover{
+background:var(--gold);
+color:#111;
+}
+
+footer{
+padding:30px;
+text-align:center;
+font-size:12px;
+color:#777;
+}
+
+@media(max-width:800px){
+nav{
+padding:22px 24px;
+}
+nav a{
+margin-left:12px;
+font-size:11px;
+letter-spacing:0;
+}
+.menu-item{
+grid-template-columns:1fr;
+}
+.gallery{
+grid-template-columns:1fr;
+}
+.gallery img{
+height:320px;
+}
+section{
+padding:70px 24px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div>NOIR BAR</div>
+<div>
+<a href="index.html">TOP</a>
+<a href="#">MENU</a>
+<a href="#reserve">RESERVE</a>
+</div>
+</nav>
+
+<header>
+<div>
+<div class="small">BAR MENU</div>
+<h1>Drinks for<br>quiet nights.</h1>
+<p>
+クラシックカクテル、ウイスキー、シグネチャードリンク。
+夜に合う一杯をゆっくりと。
+</p>
+</div>
+</header>
+
+<section>
+<div class="label">SIGNATURE</div>
+<h2>Signature Cocktails</h2>
+
+<div class="menu-group">
+
+<div class="menu-item">
+<div>
+<h3>Noir Old Fashioned</h3>
+<p>バーボン、ビターズ、オレンジピール。香りを重ねた一杯。</p>
+</div>
+<div class="price">¥1,500</div>
+</div>
+
+<div class="menu-item">
+<div>
+<h3>Smoked Negroni</h3>
+<p>ジン、カンパリ、ベルモット。軽いスモークの余韻。</p>
+</div>
+<div class="price">¥1,600</div>
+</div>
+
+<div class="menu-item">
+<div>
+<h3>House Martini</h3>
+<p>ドライで澄んだ味わい。NOIR BARの定番。</p>
+</div>
+<div class="price">¥1,700</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="label">WHISKY</div>
+<h2>Whisky</h2>
+
+<div class="menu-group">
+
+<div class="menu-item">
+<div>
+<h3>Single Malt Selection</h3>
+<p>季節ごとに入れ替わるシングルモルト。</p>
+</div>
+<div class="price">¥1,300~</div>
+</div>
+
+<div class="menu-item">
+<div>
+<h3>Japanese Whisky</h3>
+<p>国内蒸留所を中心とした限定ボトル。</p>
+</div>
+<div class="price">¥1,600~</div>
+</div>
+
+<div class="menu-item">
+<div>
+<h3>Bourbon / Rye</h3>
+<p>クラシックカクテルにも合うラインナップ。</p>
+</div>
+<div class="price">¥1,100~</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="label">FOOD</div>
+<h2>Bar Food</h2>
+
+<div class="menu-group">
+
+<div class="menu-item">
+<div>
+<h3>Cheese Plate</h3>
+<p>ワインやウイスキーに合わせたチーズ盛り。</p>
+</div>
+<div class="price">¥1,400</div>
+</div>
+
+<div class="menu-item">
+<div>
+<h3>Prosciutto</h3>
+<p>香り高い生ハムをシンプルに。</p>
+</div>
+<div class="price">¥1,200</div>
+</div>
+
+<div class="menu-item">
+<div>
+<h3>Chocolate & Nuts</h3>
+<p>深夜の一杯に合わせる軽い一皿。</p>
+</div>
+<div class="price">¥900</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="label">GALLERY</div>
+<h2>Night Mood</h2>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1400&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?q=80&w=1400&auto=format&fit=crop">
+</div>
+</section>
+
+<section id="reserve" class="cta">
+<div class="label">RESERVATION</div>
+<h2>ご予約はこちら</h2>
+<a href="#" class="btn">LINE予約</a>
+</section>
+
+<footer>
+© NOIR BAR
+</footer>
+
+</body>
+</html>
