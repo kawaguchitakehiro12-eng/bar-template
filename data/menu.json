@@ -1,0 +1,27 @@
+{
+  "categories": [
+    {
+      "name": "Signature Cocktails",
+      "items": [
+        {
+          "name": "Old Fashioned",
+          "price": "1,200円",
+          "description": "熟成感あるクラシック。",
+          "order": 1
+        },
+        {
+          "name": "Negroni",
+          "price": "1,100円",
+          "description": "ビターで美しい余韻。",
+          "order": 2
+        },
+        {
+          "name": "House Martini",
+          "price": "1,300円",
+          "description": "シグネチャーツイスト。",
+          "order": 3
+        }
+      ]
+    }
+  ]
+}
