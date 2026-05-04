@@ -6,7 +6,6 @@
 <title>NOIR BAR</title>
 
 <style>
-
 :root{
 --bg:#090909;
 --black:#111;
@@ -15,11 +14,7 @@
 --muted:#8f8577;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:Georgia,"Yu Mincho",serif;
@@ -28,10 +23,7 @@ color:#f5efe6;
 line-height:1.8;
 }
 
-a{
-text-decoration:none;
-color:inherit;
-}
+a{text-decoration:none;color:inherit;}
 
 nav{
 position:fixed;
@@ -64,9 +56,7 @@ url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1800&au
 center/cover;
 }
 
-.hero{
-max-width:760px;
-}
+.hero{max-width:760px;}
 
 .small{
 font-size:12px;
@@ -154,6 +144,13 @@ color:var(--gold);
 color:#c9bfae;
 }
 
+.card .price{
+display:block;
+margin-top:12px;
+color:var(--gold);
+font-size:15px;
+}
+
 .gallery{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -192,7 +189,6 @@ color:#777;
 }
 
 @media(max-width:800px){
-
 nav a{
 margin-left:12px;
 font-size:11px;
@@ -216,26 +212,23 @@ height:320px;
 section{
 padding:70px 24px;
 }
-
 }
-
 </style>
 </head>
+
 <body>
 
 <nav>
-<div>NOIR BAR</div>
+<div id="navShopName">NOIR BAR</div>
 
 <div>
 <a href="#">TOP</a>
 <a href="menu.html">MENU</a>
 <a href="#access">ACCESS</a>
 </div>
-
 </nav>
 
-<header>
-
+<header id="heroHeader">
 <div class="hero">
 
 <div class="small">
@@ -257,17 +250,11 @@ Reserve
 </a>
 
 </div>
-
 </header>
 
-
 <section class="concept">
-
 <div>
-
-<div class="label">
-CONCEPT
-</div>
+<div class="label">CONCEPT</div>
 
 <h2>
 隠れ家で
@@ -279,115 +266,114 @@ CONCEPT
 シグネチャードリンクを
 シネマティックな空間で。
 </p>
-
 </div>
 
 <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1400&auto=format&fit=crop">
-
 </section>
 
-
 <section>
+<div class="label">SIGNATURE</div>
+<h2>Signature Cocktails</h2>
 
-<div class="label">
-SIGNATURE
-</div>
-
-<h2>
-Signature Cocktails
-</h2>
-
-<div class="menu-grid">
-
-<div class="card">
-<h3>Old Fashioned</h3>
-<p>熟成感あるクラシック。</p>
-</div>
-
-<div class="card">
-<h3>Negroni</h3>
-<p>ビターで美しい余韻。</p>
-</div>
-
-<div class="card">
-<h3>House Martini</h3>
-<p>シグネチャーツイスト。</p>
-</div>
-
-</div>
-
+<div class="menu-grid" id="menuGrid"></div>
 </section>
 
-
 <section>
-
-<div class="label">
-GALLERY
-</div>
-
-<h2>
-Atmosphere
-</h2>
+<div class="label">GALLERY</div>
+<h2>Atmosphere</h2>
 
 <div class="gallery">
 <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1400&auto=format&fit=crop">
 <img src="https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?q=80&w=1400&auto=format&fit=crop">
 </div>
-
 </section>
 
-
 <section id="access">
-
-<div class="label">
-ACCESS
-</div>
-
-<h2>
-Information
-</h2>
+<div class="label">ACCESS</div>
+<h2>Information</h2>
 
 <div class="info">
-
 <div class="row">
 <div>ADDRESS</div>
-<div>東京都豊島区○○</div>
+<div id="address">東京都豊島区○○</div>
 </div>
 
 <div class="row">
 <div>OPEN</div>
-<div>18:00 - 03:00</div>
+<div id="open">18:00 - 03:00</div>
 </div>
 
 <div class="row">
 <div>CLOSED</div>
-<div>Sunday</div>
+<div id="closed">Sunday</div>
 </div>
-
 </div>
-
 </section>
 
-
 <section class="cta">
-
-<div class="label">
-RESERVATION
-</div>
-
-<h2>
-席を予約する
-</h2>
+<div class="label">RESERVATION</div>
+<h2>席を予約する</h2>
 
 <a href="#" class="btn">
 LINE予約
 </a>
-
 </section>
 
 <footer>
-© NOIR BAR
+© <span id="footerShopName">NOIR BAR</span>
 </footer>
+
+<script>
+fetch('./data/site.json')
+  .then(res => res.json())
+  .then(data => {
+    const shopName = data.shopName || 'NOIR BAR';
+
+    document.title = shopName;
+    document.getElementById('navShopName').textContent = shopName;
+    document.getElementById('footerShopName').textContent = shopName;
+
+    document.getElementById('address').textContent = data.address || '';
+    document.getElementById('open').textContent = data.open || '';
+    document.getElementById('closed').textContent = data.closed || '';
+
+    if (data.mainImage) {
+      document.getElementById('heroHeader').style.background =
+        `linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.65)), url("${data.mainImage}") center/cover`;
+    }
+  });
+
+fetch('./data/menu.json')
+  .then(res => res.json())
+  .then(data => {
+    const menuGrid = document.getElementById('menuGrid');
+    menuGrid.innerHTML = '';
+
+    const firstCategory = data.categories?.[0];
+
+    if (!firstCategory || !firstCategory.items || firstCategory.items.length === 0) {
+      menuGrid.innerHTML = '<p>メニュー準備中です。</p>';
+      return;
+    }
+
+    const sortedItems = [...firstCategory.items].sort((a,b) => {
+      return Number(a.order || 0) - Number(b.order || 0);
+    });
+
+    sortedItems.slice(0, 3).forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      card.innerHTML = `
+        <h3>${item.name || ''}</h3>
+        <p>${item.description || ''}</p>
+        <span class="price">${item.price || ''}</span>
+      `;
+
+      menuGrid.appendChild(card);
+    });
+  });
+</script>
 
 </body>
 </html>
