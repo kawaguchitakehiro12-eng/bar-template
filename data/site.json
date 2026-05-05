@@ -1,7 +1,27 @@
 {
   "shopName": "NOIR BAR",
-  "address": "東京都○○",
-  "open": "18:00 - 03:00",
-  "closed": "Sunday",
-  "mainImage": ""
+  "hero": {
+    "title": "タイトルテスト",
+    "text": "説明文テスト",
+    "image": ""
+  },
+  "concept": {
+    "title": "コンセプト見出しテスト",
+    "text": "本文テスト"
+  },
+  "recommend": {
+    "title": "おすすめメニューテスト"
+  },
+  "gallery": {
+    "title": "ギャラリー見出しテスト"
+  },
+  "access": {
+    "address": "住所テスト",
+    "open": "営業時間テスト",
+    "closed": "定休日テスト"
+  },
+  "reserve": {
+    "title": "予約見出しテスト",
+    "lineUrl": ""
+  }
 }
