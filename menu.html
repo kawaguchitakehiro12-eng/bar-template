@@ -3,185 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MENU | NOIR BAR</title>
+<title>MENU</title>
 
 <style>
 :root{
---bg:#090909;
---black:#111;
---gold:#c59b5f;
---soft:#d5c7b2;
---muted:#8f8577;
+--bg:#f7f3ec;
+--text:#1f1f1d;
+--muted:#6f6a61;
+--line:#ddd4c7;
+--accent:#9b7a4e;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
 body{
-font-family:Georgia,"Yu Mincho",serif;
+font-family: Georgia,"Yu Mincho",serif;
 background:var(--bg);
-color:#f5efe6;
-line-height:1.8;
+color:var(--text);
+line-height:1.9;
 }
 
 a{text-decoration:none;color:inherit;}
 
 nav{
 position:fixed;
-top:0;
-left:0;
-right:0;
+top:0;left:0;right:0;
+z-index:100;
 display:flex;
 justify-content:space-between;
-padding:28px 8vw;
-background:rgba(9,9,9,.78);
+padding:18px 5vw;
+background:rgba(247,243,236,.9);
 backdrop-filter:blur(10px);
-z-index:100;
 }
 
-nav a{
-margin-left:20px;
-font-size:12px;
+.logo{
+font-size:14px;
 letter-spacing:.14em;
-text-transform:uppercase;
 }
 
-header{
-min-height:72vh;
+.nav{
 display:flex;
-align-items:center;
-padding:8vw;
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),
-url("https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1800&auto=format&fit=crop")
-center/cover;
+gap:18px;
+font-size:11px;
 }
 
-.small{
-font-size:12px;
-letter-spacing:.35em;
-color:var(--gold);
-margin-bottom:24px;
+.header{
+padding:140px 5vw 60px;
 }
 
 h1{
+font-size:clamp(52px,9vw,110px);
 font-weight:400;
-font-size:clamp(58px,10vw,115px);
-line-height:1;
-margin-bottom:24px;
 }
 
-header p{
-max-width:540px;
-color:#d2c8bb;
+.category{
+padding:70px 5vw;
+border-top:1px solid var(--line);
 }
 
-section{
-padding:100px 8vw;
-}
-
-.label{
-font-size:12px;
-letter-spacing:.35em;
-color:var(--gold);
-margin-bottom:22px;
-}
-
-h2{
-font-size:clamp(40px,6vw,74px);
+.category h2{
+font-size:clamp(34px,5vw,64px);
 font-weight:400;
-margin-bottom:44px;
+margin-bottom:36px;
 }
 
-.menu-group{
-margin-bottom:90px;
-}
-
-.menu-item{
+.menu-list{
 display:grid;
-grid-template-columns:1fr auto;
-gap:32px;
-padding:24px 0;
-border-bottom:1px solid rgba(255,255,255,.12);
+grid-template-columns:1fr 1fr;
+gap:28px;
 }
 
-.menu-item h3{
-font-size:27px;
+.item{
+display:grid;
+grid-template-columns:150px 1fr;
+gap:20px;
+border-bottom:1px solid var(--line);
+padding-bottom:24px;
+}
+
+.item img{
+width:100%;
+height:130px;
+object-fit:cover;
+background:#e5ded2;
+}
+
+.item h3{
+font-size:24px;
 font-weight:400;
-margin-bottom:8px;
-color:var(--soft);
-}
-
-.menu-item p{
-color:var(--muted);
-font-size:14px;
-max-width:620px;
 }
 
 .price{
-color:var(--gold);
-letter-spacing:.08em;
-white-space:nowrap;
+color:var(--accent);
+margin-top:4px;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-height:500px;
-object-fit:cover;
-filter:brightness(.85);
-}
-
-.cta{
-text-align:center;
-padding:130px 30px;
-background:#111;
-}
-
-.btn{
-display:inline-block;
-margin-top:34px;
-padding:14px 34px;
-border:1px solid var(--gold);
-color:var(--gold);
-}
-
-.btn:hover{
-background:var(--gold);
-color:#111;
-}
-
-footer{
-padding:30px;
-text-align:center;
-font-size:12px;
-color:#777;
+.desc{
+color:var(--muted);
+font-size:14px;
+margin-top:6px;
 }
 
 @media(max-width:800px){
 nav{
-padding:22px 24px;
+display:block;
+padding:14px 18px;
 }
-nav a{
-margin-left:12px;
-font-size:11px;
-letter-spacing:0;
+
+.logo{margin-bottom:8px;}
+
+.nav{
+overflow-x:auto;
+white-space:nowrap;
+gap:14px;
 }
-.menu-item{
+
+.header{
+padding:120px 20px 40px;
+}
+
+.category{
+padding:60px 20px;
+}
+
+.menu-list{
 grid-template-columns:1fr;
 }
-.gallery{
+
+.item{
 grid-template-columns:1fr;
 }
-.gallery img{
-height:320px;
-}
-section{
-padding:70px 24px;
+
+.item img{
+height:230px;
 }
 }
 </style>
@@ -190,143 +145,75 @@ padding:70px 24px;
 <body>
 
 <nav>
-<div>NOIR BAR</div>
-<div>
-<a href="index.html">TOP</a>
-<a href="#">MENU</a>
-<a href="#reserve">RESERVE</a>
+<div class="logo" id="shopNameNav">NOIR CAFE</div>
+<div class="nav">
+<a href="index.html#top">TOP</a>
+<a href="menu.html">MENU</a>
+<a href="index.html#access">ACCESS</a>
+<a href="index.html#reserve">RESERVE</a>
 </div>
 </nav>
 
-<header>
+<div class="header">
+<h1>Menu</h1>
+</div>
+
+<div id="menuContainer"></div>
+
+<script>
+fetch('./data/site.json')
+.then(res => res.json())
+.then(data => {
+const shopName = data.shopName || "NOIR CAFE";
+document.title = "MENU | " + shopName;
+document.getElementById("shopNameNav").textContent = shopName;
+});
+
+fetch('./data/menu.json')
+.then(res => res.json())
+.then(data => {
+const container = document.getElementById("menuContainer");
+container.innerHTML = "";
+
+if(!data.categories || data.categories.length === 0){
+container.innerHTML = '<p style="padding:40px">メニュー準備中です。</p>';
+return;
+}
+
+const defaultImages = [
+"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200",
+"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200",
+"https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200"
+];
+
+data.categories.forEach(category => {
+const section = document.createElement("section");
+section.className = "category";
+
+const sortedItems = [...(category.items || [])].sort((a,b)=> {
+return Number(a.order || 0) - Number(b.order || 0);
+});
+
+section.innerHTML = `
+<h2>${category.name || ""}</h2>
+<div class="menu-list">
+${sortedItems.map((item,index)=>`
+<div class="item">
+<img src="${item.image || defaultImages[index % defaultImages.length]}" alt="${item.name || ""}">
 <div>
-<div class="small">BAR MENU</div>
-<h1>Drinks for<br>quiet nights.</h1>
-<p>
-クラシックカクテル、ウイスキー、シグネチャードリンク。
-夜に合う一杯をゆっくりと。
-</p>
+<h3>${item.name || ""}</h3>
+<div class="price">${item.price || ""}</div>
+<div class="desc">${item.description || ""}</div>
 </div>
-</header>
+</div>
+`).join("")}
+</div>
+`;
 
-<section>
-<div class="label">SIGNATURE</div>
-<h2>Signature Cocktails</h2>
-
-<div class="menu-group">
-
-<div class="menu-item">
-<div>
-<h3>Noir Old Fashioned</h3>
-<p>バーボン、ビターズ、オレンジピール。香りを重ねた一杯。</p>
-</div>
-<div class="price">¥1,500</div>
-</div>
-
-<div class="menu-item">
-<div>
-<h3>Smoked Negroni</h3>
-<p>ジン、カンパリ、ベルモット。軽いスモークの余韻。</p>
-</div>
-<div class="price">¥1,600</div>
-</div>
-
-<div class="menu-item">
-<div>
-<h3>House Martini</h3>
-<p>ドライで澄んだ味わい。NOIR BARの定番。</p>
-</div>
-<div class="price">¥1,700</div>
-</div>
-
-</div>
-</section>
-
-<section>
-<div class="label">WHISKY</div>
-<h2>Whisky</h2>
-
-<div class="menu-group">
-
-<div class="menu-item">
-<div>
-<h3>Single Malt Selection</h3>
-<p>季節ごとに入れ替わるシングルモルト。</p>
-</div>
-<div class="price">¥1,300~</div>
-</div>
-
-<div class="menu-item">
-<div>
-<h3>Japanese Whisky</h3>
-<p>国内蒸留所を中心とした限定ボトル。</p>
-</div>
-<div class="price">¥1,600~</div>
-</div>
-
-<div class="menu-item">
-<div>
-<h3>Bourbon / Rye</h3>
-<p>クラシックカクテルにも合うラインナップ。</p>
-</div>
-<div class="price">¥1,100~</div>
-</div>
-
-</div>
-</section>
-
-<section>
-<div class="label">FOOD</div>
-<h2>Bar Food</h2>
-
-<div class="menu-group">
-
-<div class="menu-item">
-<div>
-<h3>Cheese Plate</h3>
-<p>ワインやウイスキーに合わせたチーズ盛り。</p>
-</div>
-<div class="price">¥1,400</div>
-</div>
-
-<div class="menu-item">
-<div>
-<h3>Prosciutto</h3>
-<p>香り高い生ハムをシンプルに。</p>
-</div>
-<div class="price">¥1,200</div>
-</div>
-
-<div class="menu-item">
-<div>
-<h3>Chocolate & Nuts</h3>
-<p>深夜の一杯に合わせる軽い一皿。</p>
-</div>
-<div class="price">¥900</div>
-</div>
-
-</div>
-</section>
-
-<section>
-<div class="label">GALLERY</div>
-<h2>Night Mood</h2>
-
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1400&auto=format&fit=crop">
-<img src="https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?q=80&w=1400&auto=format&fit=crop">
-</div>
-</section>
-
-<section id="reserve" class="cta">
-<div class="label">RESERVATION</div>
-<h2>ご予約はこちら</h2>
-<a href="#" class="btn">LINE予約</a>
-</section>
-
-<footer>
-© NOIR BAR
-</footer>
+container.appendChild(section);
+});
+});
+</script>
 
 </body>
 </html>
