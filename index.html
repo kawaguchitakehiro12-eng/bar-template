@@ -3,22 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NOIR CAFE</title>
+<title>NOIR BAR</title>
 
 <style>
 :root{
---bg:#f7f3ec;
---text:#1f1f1d;
---muted:#6f6a61;
---line:#ddd4c7;
---accent:#9b7a4e;
+--bg:#070707;
+--panel:#111;
+--text:#f4efe7;
+--muted:#9b9286;
+--gold:#c7a46a;
+--line:rgba(199,164,106,.22);
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 
 body{
-font-family: Georgia,"Yu Mincho",serif;
+font-family:Georgia,"Yu Mincho",serif;
 background:var(--bg);
 color:var(--text);
 line-height:1.9;
@@ -32,122 +33,192 @@ top:0;left:0;right:0;
 z-index:100;
 display:flex;
 justify-content:space-between;
-padding:18px 5vw;
-background:rgba(247,243,236,.9);
-backdrop-filter:blur(10px);
+align-items:center;
+padding:22px 6vw;
+background:rgba(7,7,7,.72);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .logo{
-font-size:14px;
-letter-spacing:.14em;
+font-size:13px;
+letter-spacing:.24em;
+color:var(--gold);
 }
 
 .nav{
 display:flex;
-gap:18px;
+gap:24px;
 font-size:11px;
+letter-spacing:.18em;
 }
 
 .hero{
-height:100vh;
+min-height:100vh;
 display:flex;
 align-items:center;
-padding:0 5vw;
-background-size:cover;
-background-position:center;
+padding:120px 6vw 80px;
+background:
+linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.34)),
+url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1800&auto=format&fit=crop")
+center/cover;
 }
 
 .hero-inner{
-max-width:700px;
-background:rgba(247,243,236,.55);
-padding:28px;
+max-width:760px;
+}
+
+.kicker{
+font-size:12px;
+letter-spacing:.38em;
+color:var(--gold);
+margin-bottom:24px;
 }
 
 h1{
-font-size:clamp(48px,8vw,100px);
+font-size:clamp(58px,10vw,132px);
 font-weight:400;
-margin-bottom:20px;
-line-height:1.1;
+line-height:.96;
+letter-spacing:-.05em;
+margin-bottom:32px;
 }
 
-p{color:var(--muted);}
+.hero p{
+max-width:560px;
+color:#cfc4b5;
+font-size:16px;
+}
 
 section{
-padding:80px 5vw;
+padding:110px 6vw;
+}
+
+.section-head{
+display:grid;
+grid-template-columns:170px 1fr;
+gap:50px;
+margin-bottom:54px;
+}
+
+.label{
+font-size:12px;
+letter-spacing:.35em;
+color:var(--gold);
 }
 
 h2{
-font-size:clamp(34px,5vw,64px);
+font-size:clamp(40px,6vw,78px);
 font-weight:400;
-margin-bottom:24px;
+line-height:1.08;
+letter-spacing:-.04em;
+}
+
+.concept-text{
+max-width:760px;
+margin-left:auto;
+color:var(--muted);
+font-size:17px;
 }
 
 .menu-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:40px;
+gap:24px;
 }
 
 .card{
-background:#fff;
-padding:20px;
+background:linear-gradient(180deg,#141414,#0d0d0d);
 border:1px solid var(--line);
+padding:34px;
+min-height:260px;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
 }
 
 .card img{
 width:100%;
-height:220px;
+height:240px;
 object-fit:cover;
-margin-bottom:16px;
-background:#e5ded2;
+margin-bottom:24px;
+filter:grayscale(.15) contrast(1.05);
 }
 
 .card h3{
-font-size:24px;
+font-size:28px;
 font-weight:400;
+color:var(--gold);
 margin-bottom:8px;
 }
 
+.card p{
+color:#bdb3a6;
+}
+
 .price{
-margin-top:8px;
-color:var(--accent);
+margin-top:12px;
+color:var(--gold);
 }
 
 .gallery{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
+grid-template-columns:1.2fr .8fr;
+gap:18px;
 }
 
 .gallery img{
 width:100%;
-height:300px;
+height:560px;
 object-fit:cover;
+filter:brightness(.82);
 }
 
-.info{margin-top:30px;}
+.info{
+max-width:760px;
+margin-left:auto;
+border-top:1px solid var(--line);
+}
 
 .row{
-display:flex;
-justify-content:space-between;
+display:grid;
+grid-template-columns:150px 1fr;
+gap:24px;
+padding:22px 0;
 border-bottom:1px solid var(--line);
-padding:15px 0;
-gap:20px;
+}
+
+.row div:first-child{
+color:var(--gold);
+font-size:12px;
+letter-spacing:.2em;
+}
+
+.reserve{
+background:#101010;
+text-align:center;
 }
 
 .btn{
 display:inline-block;
-margin-top:20px;
-padding:12px 24px;
-border:1px solid #000;
+margin-top:26px;
+padding:14px 36px;
+border:1px solid var(--gold);
+border-radius:999px;
+color:var(--gold);
+letter-spacing:.16em;
+font-size:12px;
+}
+
+.btn:hover{
+background:var(--gold);
+color:#111;
 }
 
 footer{
-padding:30px;
+padding:34px;
 text-align:center;
 font-size:12px;
-color:#999;
+color:#777;
 }
 
 @media(max-width:800px){
@@ -156,25 +227,56 @@ display:block;
 padding:14px 18px;
 }
 
-.logo{margin-bottom:8px;}
+.logo{
+margin-bottom:8px;
+}
 
 .nav{
 overflow-x:auto;
 white-space:nowrap;
-gap:14px;
+gap:16px;
+font-size:11px;
 }
 
-.menu-grid{grid-template-columns:1fr;}
-.gallery{grid-template-columns:1fr;}
-.hero{height:80vh;padding:0 20px;}
-section{padding:70px 20px;}
+.hero{
+min-height:88vh;
+padding:120px 22px 70px;
+}
+
+h1{
+font-size:clamp(52px,16vw,82px);
+}
+
+section{
+padding:76px 22px;
+}
+
+.section-head{
+grid-template-columns:1fr;
+gap:18px;
+margin-bottom:34px;
+}
+
+.concept-text{
+margin-left:0;
+font-size:15px;
+}
+
+.menu-grid{
+grid-template-columns:1fr;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.gallery img{
+height:340px;
+}
 
 .row{
-display:block;
-}
-
-.card img{
-height:240px;
+grid-template-columns:1fr;
+gap:6px;
 }
 }
 </style>
@@ -183,7 +285,7 @@ height:240px;
 <body>
 
 <nav>
-<div class="logo" id="shopNameNav">NOIR CAFE</div>
+<div class="logo" id="shopNameNav">NOIR BAR</div>
 <div class="nav">
 <a href="#top">TOP</a>
 <a href="menu.html">MENU</a>
@@ -192,125 +294,116 @@ height:240px;
 </div>
 </nav>
 
-<section class="hero" id="top">
+<header class="hero" id="top">
 <div class="hero-inner">
-<h1 id="heroTitle">タイトル</h1>
-<p id="heroText">説明文</p>
+<div class="kicker">PRIVATE COCKTAIL LOUNGE</div>
+<h1 id="heroTitle">Night has<br>its own ritual.</h1>
+<p id="heroText">静かな照明とクラフトカクテル。深夜に余韻を味わうためのバー。</p>
 </div>
+</header>
+
+<section>
+<div class="section-head">
+<div class="label">CONCEPT</div>
+<h2 id="conceptTitle">隠れ家で、夜を味わう。</h2>
+</div>
+<p class="concept-text" id="conceptText"></p>
 </section>
 
 <section>
-<h2 id="conceptTitle">コンセプト</h2>
-<p id="conceptText"></p>
-</section>
-
-<section>
-<h2 id="recommendTitle">おすすめ</h2>
+<div class="section-head">
+<div class="label">SIGNATURE</div>
+<h2 id="recommendTitle">Signature Cocktails</h2>
+</div>
 <div class="menu-grid" id="menuGrid"></div>
 </section>
 
 <section>
-<h2 id="galleryTitle">ギャラリー</h2>
+<div class="section-head">
+<div class="label">GALLERY</div>
+<h2 id="galleryTitle">Atmosphere</h2>
+</div>
 <div class="gallery">
-<img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=1200">
-<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1400&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?q=80&w=1400&auto=format&fit=crop">
 </div>
 </section>
 
 <section id="access">
-<h2>店舗情報</h2>
+<div class="section-head">
+<div class="label">ACCESS</div>
+<h2>Information</h2>
+</div>
 
 <div class="info">
-<div class="row">
-<div>住所</div>
-<div id="address"></div>
-</div>
-
-<div class="row">
-<div>営業時間</div>
-<div id="open"></div>
-</div>
-
-<div class="row">
-<div>定休日</div>
-<div id="closed"></div>
-</div>
+<div class="row"><div>ADDRESS</div><div id="address"></div></div>
+<div class="row"><div>OPEN</div><div id="open"></div></div>
+<div class="row"><div>CLOSED</div><div id="closed"></div></div>
 </div>
 </section>
 
-<section id="reserve">
-<h2 id="reserveTitle">予約</h2>
+<section class="reserve" id="reserve">
+<div class="label">RESERVATION</div>
+<h2 id="reserveTitle">席を予約する</h2>
 <a id="lineBtn" class="btn">LINE予約</a>
 </section>
 
-<footer>
-© <span id="footerShopName">NOIR CAFE</span>
-</footer>
+<footer>© <span id="footerShopName">NOIR BAR</span></footer>
 
 <script>
 fetch('./data/site.json')
-.then(res => res.json())
-.then(data => {
-const shopName = data.shopName || "NOIR CAFE";
+.then(res=>res.json())
+.then(data=>{
+const shopName=data.shopName||"NOIR BAR";
+document.title=shopName;
+document.getElementById("shopNameNav").textContent=shopName;
+document.getElementById("footerShopName").textContent=shopName;
 
-document.title = shopName;
-document.getElementById("shopNameNav").textContent = shopName;
-document.getElementById("footerShopName").textContent = shopName;
+document.getElementById("heroTitle").innerHTML=(data.hero?.title||"").replace(/\n/g,"<br>");
+document.getElementById("heroText").textContent=data.hero?.text||"";
 
-document.getElementById("heroTitle").textContent = data.hero?.title || "";
-document.getElementById("heroText").textContent = data.hero?.text || "";
-
-const hero = document.querySelector(".hero");
-hero.style.backgroundImage = data.hero?.image
-? `url("${data.hero.image}")`
-: `url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1600")`;
-
-document.getElementById("conceptTitle").textContent = data.concept?.title || "";
-document.getElementById("conceptText").textContent = data.concept?.text || "";
-
-document.getElementById("recommendTitle").textContent = data.recommend?.title || "";
-document.getElementById("galleryTitle").textContent = data.gallery?.title || "";
-document.getElementById("reserveTitle").textContent = data.reserve?.title || "";
-
-document.getElementById("address").textContent = data.access?.address || "";
-document.getElementById("open").textContent = data.access?.open || "";
-document.getElementById("closed").textContent = data.access?.closed || "";
-
-const lineBtn = document.getElementById("lineBtn");
-if(data.reserve?.lineUrl){
-lineBtn.href = data.reserve.lineUrl;
-} else {
-lineBtn.style.display = "none";
+if(data.hero?.image){
+document.querySelector(".hero").style.background=
+`linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.34)),url("${data.hero.image}") center/cover`;
 }
+
+document.getElementById("conceptTitle").textContent=data.concept?.title||"";
+document.getElementById("conceptText").textContent=data.concept?.text||"";
+document.getElementById("recommendTitle").textContent=data.recommend?.title||"";
+document.getElementById("galleryTitle").textContent=data.gallery?.title||"";
+
+document.getElementById("address").textContent=data.access?.address||"";
+document.getElementById("open").textContent=data.access?.open||"";
+document.getElementById("closed").textContent=data.access?.closed||"";
+document.getElementById("reserveTitle").textContent=data.reserve?.title||"";
+
+const lineBtn=document.getElementById("lineBtn");
+if(data.reserve?.lineUrl){lineBtn.href=data.reserve.lineUrl;}else{lineBtn.style.display="none";}
 });
 
 fetch('./data/menu.json')
-.then(res => res.json())
-.then(data => {
-const grid = document.getElementById("menuGrid");
-grid.innerHTML = "";
+.then(res=>res.json())
+.then(data=>{
+const grid=document.getElementById("menuGrid");
+grid.innerHTML="";
+const items=data.categories?.[0]?.items||[];
+items.sort((a,b)=>(a.order||0)-(b.order||0));
 
-const items = data.categories?.[0]?.items || [];
-
-items.sort((a,b)=> (a.order||0)-(b.order||0));
-
-const defaultImages = [
-"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200",
-"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200",
-"https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200"
+const defaultImages=[
+"https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200",
+"https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1200",
+"https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1200"
 ];
 
 items.slice(0,3).forEach((item,index)=>{
-const div = document.createElement("div");
-div.className = "card";
-
-div.innerHTML = `
-<img src="${item.image || defaultImages[index % defaultImages.length]}" alt="${item.name || ""}">
-<h3>${item.name || ""}</h3>
-<p>${item.description || ""}</p>
-<p class="price">${item.price || ""}</p>
+const div=document.createElement("div");
+div.className="card";
+div.innerHTML=`
+<img src="${item.image||defaultImages[index%defaultImages.length]}" alt="${item.name||""}">
+<h3>${item.name||""}</h3>
+<p>${item.description||""}</p>
+<div class="price">${item.price||""}</div>
 `;
-
 grid.appendChild(div);
 });
 });
